@@ -9,6 +9,19 @@
 import UIKit
 
 struct Item {
-    var itemName: String?
-    var itemDetail: String?
+    
+    var name: String?
+    
+    var url: String?
+    
+    var imageUrl: String?
+
+    var description: String?
+    
+    init(name: String, url: String, imageUrl: String, description: String? = nil) {
+        self.name = name
+        self.url = url
+        self.imageUrl = imageUrl
+        self.description = description
+    }
 }

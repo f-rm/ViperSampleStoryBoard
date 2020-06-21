@@ -1,0 +1,36 @@
+### Headers settings
+company: personal
+
+### Xcode project settings
+project_name: ViperSampleStoryBoard
+xcodeproj_path: ViperSampleStoryBoard.xcodeproj
+
+### Code generation settings section
+# The main project target name
+project_target: ViperSampleStoryBoard
+
+# The file path for new modules
+project_file_path: ViperSampleStoryBoard/modules
+
+# The Xcode group path to new modules
+project_group_path: ViperSampleStoryBoard/modules
+
+### Tests generation settings section
+# The tests target name
+test_target: ViperSampleStoryBoardTests
+
+# The file path for new tests
+test_file_path: ViperSampleStoryBoard/test
+
+# The Xcode group path to new tests
+test_group_path: ViperSampleStoryBoard/test
+
+### Dependencies settings section
+podfile_path: ViperSampleStoryBoard/Pods
+cartfile_path: ViperSampleStoryBoard/carthage
+
+### Templates
+templates:
+- {name: rviper_controller}
+- {name: mvvm_controller}
+- {name: swifty_viper}
