@@ -8,6 +8,15 @@
 
 import UIKit
 
-class UIImageView_: NSObject {
-
+extension UIImageView {
+    public func setImage(fromUrl url: String) {
+        URLSession.shared.dataTask(with: URLRequest(url: URL(string: url)!)) { (data, response, error) in
+            guard let data = data, let _ = response, error == nil else {
+                return
+            }
+            DispatchQueue.main.async(execute: {
+                self.image = UIImage(data: data)
+            })
+        }.resume()
+    }
 }

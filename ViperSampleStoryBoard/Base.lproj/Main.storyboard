@@ -1,24 +1,116 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y9H-76-PvI">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--Navigation Controller-->
+        <scene sceneID="iN5-p8-kla">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FX0-3y-0Pe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <navigationController id="Y9H-76-PvI" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="zg7-dg-prK">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="0Eh-Xb-rFi" kind="relationship" relationship="rootViewController" id="lOT-SD-9uB"/>
+                    </connections>
+                </navigationController>
             </objects>
+            <point key="canvasLocation" x="119" y="119"/>
+        </scene>
+        <!--Itemlist View Controller-->
+        <scene sceneID="QeO-A4-h2J">
+            <objects>
+                <viewController title="アイテム一覧" id="0Eh-Xb-rFi" customClass="ItemListViewController" customModule="ViperSampleStoryBoard" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="sV2-5b-zkj">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="3KD-71-Epb">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="60" id="yzR-gA-UOT" customClass="CurrencyCell" customModule="ViperSampleStoryBoard" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="60"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="yzR-gA-UOT" id="7yx-pu-R85">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="60"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="0Eh-Xb-rFi" id="TWU-Mv-z3t"/>
+                                    <outlet property="delegate" destination="0Eh-Xb-rFi" id="C6f-Ue-ik5"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="3KD-71-Epb" firstAttribute="bottom" secondItem="ZM8-7p-zdQ" secondAttribute="bottom" id="EzR-v8-6c9"/>
+                            <constraint firstItem="3KD-71-Epb" firstAttribute="top" secondItem="ZM8-7p-zdQ" secondAttribute="top" id="g3V-YN-rjH"/>
+                            <constraint firstItem="3KD-71-Epb" firstAttribute="trailing" secondItem="ZM8-7p-zdQ" secondAttribute="trailing" id="jed-5g-kg4"/>
+                            <constraint firstItem="3KD-71-Epb" firstAttribute="leading" secondItem="ZM8-7p-zdQ" secondAttribute="leading" id="mq9-Ru-YGH"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ZM8-7p-zdQ"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="QYR-eN-aQ7"/>
+                    <connections>
+                        <outlet property="tableView" destination="3KD-71-Epb" id="pSo-lN-Aet"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="g6b-rM-IVR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <customObject id="abf-pn-ebI" customClass="ItemListModuleInitializer" customModule="ViperSampleStoryBoard" customModuleProvider="target">
+                    <connections>
+                        <outlet property="itemlistViewController" destination="0Eh-Xb-rFi" id="bsd-Xh-DPQ"/>
+                    </connections>
+                </customObject>
+            </objects>
+            <point key="canvasLocation" x="918.84057971014499" y="118.52678571428571"/>
+        </scene>
+        <!--Item Detail View Controller-->
+        <scene sceneID="i3x-RM-0ZD">
+            <objects>
+                <viewController storyboardIdentifier="itemDetail" title="アイテム詳細" id="6HA-rE-nFw" customClass="ItemDetailViewController" customModule="ViperSampleStoryBoard" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="rlM-IK-6hZ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zjA-y8-PD6">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="zjA-y8-PD6" firstAttribute="bottom" secondItem="44f-SL-U2X" secondAttribute="bottom" id="30R-yS-xce"/>
+                            <constraint firstItem="zjA-y8-PD6" firstAttribute="top" secondItem="44f-SL-U2X" secondAttribute="top" id="7Jj-wi-e5k"/>
+                            <constraint firstItem="zjA-y8-PD6" firstAttribute="trailing" secondItem="44f-SL-U2X" secondAttribute="trailing" id="BHs-oH-Ses"/>
+                            <constraint firstItem="zjA-y8-PD6" firstAttribute="leading" secondItem="44f-SL-U2X" secondAttribute="leading" id="flT-VT-Yze"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="44f-SL-U2X"/>
+                    </view>
+                    <connections>
+                        <outlet property="webView" destination="zjA-y8-PD6" id="4IA-93-gKa"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="75W-pt-6As" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <customObject id="GhZ-De-IbX" customClass="ItemDetailModuleInitializer" customModule="ViperSampleStoryBoard" customModuleProvider="target">
+                    <connections>
+                        <outlet property="itemDetailViewController" destination="6HA-rE-nFw" id="NOJ-Xk-BgM"/>
+                    </connections>
+                </customObject>
+            </objects>
+            <point key="canvasLocation" x="1673.913043478261" y="116.51785714285714"/>
         </scene>
     </scenes>
 </document>

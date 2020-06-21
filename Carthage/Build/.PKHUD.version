@@ -1,0 +1,19 @@
+{
+  "Mac" : [
+
+  ],
+  "watchOS" : [
+
+  ],
+  "tvOS" : [
+
+  ],
+  "commitish" : "5.3.0",
+  "iOS" : [
+    {
+      "name" : "PKHUD",
+      "hash" : "f4f7fe89cf41b9b4fde8a2244f6eb341b0d18f2758aa5acc654f9fecf2e3d89a",
+      "swiftToolchainVersion" : "5.1.3 (swiftlang-1100.0.282.1 clang-1100.0.33.15)"
+    }
+  ]
+}
